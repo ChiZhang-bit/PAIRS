@@ -1,0 +1,31 @@
+{
+  "dataset": "sift1m",
+  "stage": "search",
+  "variant": "full",
+  "profile": "configs/paper.json",
+  "paths": {
+    "build": "build",
+    "data": "../dataset",
+    "index": "artifacts",
+    "output": "results"
+  },
+  "build": {
+    "threads": 1
+  },
+  "search": {
+    "topk": 10,
+    "threads": 1,
+    "ef_match": 64,
+    "visit_budget": 1024,
+    "expand_budget": 1024,
+    "bridge_budget": 512,
+    "force_plan": "auto",
+    "force_driver": null,
+    "calibrate_costs": false
+  },
+  "evaluation": {
+    "warmup": 100,
+    "repeats": 3,
+    "max_queries": null
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "method": "PAIRS",
+  "paper": "PAIRS: Predicate-Agnostic Indexing and Retrieval System for Multi-Attribute Filtered ANNS",
+  "build": {
+    "M": 16,
+    "ef-construction": 400,
+    "ef-max": 2048,
+    "random-seed": 2023,
+    "build-threads": 1
+  },
+  "search": {
+    "topk": 10,
+    "ef-match": 64,
+    "visit-budget": 1024,
+    "expand-budget": 1024,
+    "max-bridge-budget": 512,
+    "threads": 1,
+    "probe-budget": 64,
+    "total-probe-budget": 256,
+    "probe-strata": 8,
+    "probe-seed": 2023,
+    "exact-scan-threshold": 4096,
+    "force-plan": "auto",
+    "driver-policy": "all",
+    "target-recall": 0,
+    "disable-exact-guard": true
+  },
+  "evaluation": {
+    "warmup": 100,
+    "repeats": 3
+  },
+  "datasets": {
+    "sift1m": {
+      "directory": "SIFT1M",
+      "base_count": 1000000,
+      "query_count": 10000,
+      "dimension": 128,
+      "attributes": 6,
+      "base": "sift_base.fvecs",
+      "queries": "sift_query.fvecs",
+      "attributes_file": "base_attrs.bin",
+      "filters": "filters.jsonl",
+      "groundtruth": "filtered_groundtruth.ivecs"
+    },
+    "gist1m": {
+      "directory": "GIST1M",
+      "base_count": 1000000,
+      "query_count": 1000,
+      "dimension": 960,
+      "attributes": 6,
+      "base": "gist_base.fvecs",
+      "queries": "gist_query.fvecs",
+      "attributes_file": "base_attrs.bin",
+      "filters": "filters.jsonl",
+      "groundtruth": "filtered_groundtruth.ivecs"
+    },
+    "arxiv2m": {
+      "directory": "Arxiv2M",
+      "base_count": 2000000,
+      "paper_base_count": 2138591,
+      "availability": "Complete local bundle: 2,000,000 base objects, 10,000 queries, attributes, filters, and filtered Top-100 ground truth.",
+      "query_count": 10000,
+      "dimension": 384,
+      "attributes": 102,
+      "base": "arxiv_base.fvecs",
+      "queries": "arxiv_query.fvecs",
+      "attributes_file": "base_attrs.bin",
+      "filters": "filters.jsonl",
+      "groundtruth": "filtered_groundtruth.ivecs"
+    },
+    "paper": {
+      "directory": "paper",
+      "base_count": 2029997,
+      "query_count": 10000,
+      "dimension": 200,
+      "attributes": 3,
+      "base": "base.fvecs",
+      "queries": "query.fvecs",
+      "attributes_file": "base_attrs.bin",
+      "mapping": "tag_mapping.json",
+      "filters": "filters.jsonl",
+      "groundtruth": "filtered_groundtruth.ivecs"
+    },
+    "demo": {
+      "directory": "demo",
+      "base_count": 192,
+      "query_count": 12,
+      "dimension": 8,
+      "attributes": 4,
+      "base": "base.fvecs",
+      "queries": "query.fvecs",
+      "attributes_file": "base_attrs.bin",
+      "filters": "filters.jsonl",
+      "groundtruth": "filtered_groundtruth.ivecs"
+    }
+  }
+}

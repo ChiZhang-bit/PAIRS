@@ -1,0 +1,2 @@
+# Core C++ code and release scripts need no Python packages.
+# Python 3.9+ standard library is sufficient for demo and benchmark orchestration.
